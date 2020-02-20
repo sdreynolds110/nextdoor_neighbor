@@ -26,6 +26,9 @@
       // failed.", it means you probably did not give permission for the browser to
       // locate you.
       var map, infoWindow;
+      var address = "123 Main Street"
+
+    
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: -34.397, lng: 150.644},
@@ -52,6 +55,23 @@
           // Browser doesn't support Geolocation
           handleLocationError(false, infoWindow, map.getCenter());
         }
+
+        //  Marker creator
+        function codeAddress(geocoder, map) {
+        geocoder.geocode({ address: address }, function(results, status) {
+          if (status === "OK") {
+            map.setCenter(results[0].geometry.location);
+            if (LatLong.latitude !== null && LatLong.longitude !== null) {
+              calcRoute();
+            }
+            var marker = new google.maps.Marker({
+              map: map,
+              position: results[0].geometry.location
+            });
+          }
+        });
+      }
+
       }
 
       function handleLocationError(browserHasGeolocation, infoWindow, pos) {
