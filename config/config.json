@@ -2,8 +2,7 @@
   "development": {
     "username": "root",
     "password": "Onyx2013!",
-    "database": "passport_demo", 
-    "database2": "nextdoorNeighbor",
+    "database": "nextdoorNeighbor", 
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
