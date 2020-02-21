@@ -1,6 +1,7 @@
 // Requiring our models and passport as we've configured it
 var db = require("../models");
 var passport = require("../config/passport");
+var beauty = require("../models/beauty.js")
 
 module.exports = function(app) {
   // Using the passport.authenticate middleware with our local strategy.
@@ -46,4 +47,11 @@ module.exports = function(app) {
       });
     }
   });
+//  This will pull the address data for the map
+app.get("/api/beauty_addresses", function(req, res) {
+  beauty.findAll({}).then(function(results) {
+    // results are available to us inside the .then
+    res.json(results);
+  });
+})
 };
