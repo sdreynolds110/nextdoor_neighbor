@@ -10,8 +10,8 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 600px;
-  height: 400px;
+  width: 90%;
+  height: 90%;
   transform: translate(-50%, -50%);
 }
 
@@ -87,4 +87,45 @@ h5{
 }
 .submit::-moz-focus-inner { 
     border: 0;
+}
+
+
+
+
+/* html,
+body {
+  background-color: rgb(245, 230, 218);
+} */
+section {
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.full-screen {
+  height: 100%;
+}
+.wheel-svg {
+  margin-left: 10px;
+  border: 2px dashed;
+  perspective: 300px;
+}
+.wheel-svg .term {
+  font-family: GothamLight, sans-serif;
+  font-size: 100px;
+  letter-spacing: -1px;
+  fill: white;
+  opacity: 0;
+}
+.wheel-svg .term.term03 {
+  opacity: 1;
+}
+.wheel-svg .term.term02,
+.wheel-svg .term.term04 {
+  opacity: 0.5;
+}
+.wheel-svg .term.term01,
+.wheel-svg .term.term05 {
+  opacity: 0.2;
 }
