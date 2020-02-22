@@ -2,17 +2,6 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <style>
-      /* Set the size of the div element that contains the map */
-      #map {
-        height: 200px;  /* The height is 400 pixels */
-        width: 400px;  /* The width is the width of the web page */
-        margin-top: 1REM;
-       }
-    </style>
- 
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -34,116 +23,81 @@
       integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
       crossorigin="anonymous"
     ></script>
+    <link href="https://fonts.googleapis.com/css?family=Lilita+One|Sue+Ellen+Francisco&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/b1c2a0df1f.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="public/stylesheets/style.css" />
     <title>Nextdoor Neighbor</title>
   </head>
+
   <body>
-    <div class="box">
-      <div class="logo">
+    <div class="row box">
 
-          <section class="full-screen">
-              <div class="wheel-03">
-                <svg preserveAspectRatio="xMinYMin meet" class="wheel-svg" version="1.1"
-                     width="200" height="100"
-                     viewBox="0 0 800 400">
-                  <g transform="translate(0,0)">
-                    <g transform="translate(0,250)" class="wheel-container">
-                      <text x="0" y="-225" class="term term00">Beauty</text>
-                      <text x="0" y="-150" class="term term01">Cocktails</text>
-                      <text x="0" y="-75" class="term term02">Food</text>
-                      <text x="0" y="0" class="term term03">Fashion</text>
-                      <text x="0" y="75" class="term term04">Grocery</text>
-                      <text x="0" y="150" class="term term05">Restaurant</text>
-                      <text x="0" y="225" class="term term06">Handmade</text>
-                      <text x="0" y="300" class="term term07">Jewlery</text>
-                      <text x="0" y="375" class="term term08">Beauty</text>
-                      <text x="0" y="450" class="term term09">Cocktails</text>
-                      <text x="0" y="525" class="term term10">Food</text>
-                      <text x="0" y="600" class="term term11">Fashion</text>
-                      <text x="0" y="675" class="term term12">Grocery</text>
-                      <text x="0" y="750" class="term term13">Restaurant</text>
-                    </g>
-                  </g>
-                </svg>
-              </div>
-            </section>
-        <h5>Search Local Businesses In Any City.</h5> 
+        <nav class="nav">
+            <a class="nav-link" href="#"><i class="fas fa-home"></i></a>
+            <a class="nav-link" href="#">Login</a>
+            <a class="nav-link" href="#">Register</a>
+          </nav>
+
+      <div class="col head">
+        <h1>Nextdoor Neig<i class="fas fa-home"></i>bor</h1>
+
+        <section class="full-screen">
+          <h3>Where Our<br>Neighbors<br>Make:</h3>
+          <div class="wheel-03">
+            <div class="overlays">
+              <div class="overlay o75"></div>
+              <div class="overlay o35"></div>
+              <div class="overlay none"></div>
+              <div class="overlay o35"></div>
+              <div class="overlay o75"></div>
+            </div>
+            <svg
+              preserveAspectRatio="xMinYMin meet"
+              class="wheel-svg"
+              version="1.1"
+              width="200"
+              height="100"
+              viewBox="0 0 800 400"
+            >
+              <g transform="translate(0,0)">
+                <g transform="translate(0,250)" class="wheel-container">
+                  <text x="0" y="-225" class="term term00">Beauty</text>
+                  <text x="0" y="-150" class="term term01">Cocktails</text>
+                  <text x="0" y="-75" class="term term02">Food</text>
+                  <text x="0" y="0" class="term term03">Fashion</text>
+                  <text x="0" y="75" class="term term04">Grocery</text>
+                  <text x="0" y="150" class="term term05">Restaurant</text>
+                  <text x="0" y="225" class="term term06">Handmade</text>
+                  <text x="0" y="300" class="term term07">Jewlery</text>
+                  <text x="0" y="375" class="term term08">Beauty</text>
+                  <text x="0" y="450" class="term term09">Cocktails</text>
+                  <text x="0" y="525" class="term term10">Food</text>
+                  <text x="0" y="600" class="term term11">Fashion</text>
+                  <text x="0" y="675" class="term term12">Grocery</text>
+                  <text x="0" y="750" class="term term13">Restaurant</text>
+                </g>
+              </g>
+            </svg>
+          </div>
+        </section>
+      </div>
+      <div class="col logo">
+        <h4>Search Local Businesses In Any City.</h4>
         <form>
-            <input class="input" type="search" placeholder="City, State, Zip">
-            <input class="submit" type="submit" value="Submit">
+          <input class="input" type="search" placeholder="City, State, Zip" />
+          <input class="submit" type="submit" value="Submit" />
         </form>
-        <div id = "map"></div>
-        <script>
-      // Note: This example requires that you consent to location sharing when
-      // prompted by your browser. If you see the error "The Geolocation service
-      // failed.", it means you probably did not give permission for the browser to
-      // locate you.
-      var map, infoWindow;
-      var address = "123 Main Street"
-
-    
-      function initMap() {
-        map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: -34.397, lng: 150.644},
-          zoom: 6
-        });
-        infoWindow = new google.maps.InfoWindow;
-
-        // Try HTML5 geolocation.
-        if (navigator.geolocation) {
-          navigator.geolocation.getCurrentPosition(function(position) {
-            var pos = {
-              lat: position.coords.latitude,
-              lng: position.coords.longitude
-            };
-
-            infoWindow.setPosition(pos);
-            infoWindow.setContent('Location found.');
-            infoWindow.open(map);
-            map.setCenter(pos);
-          }, function() {
-            handleLocationError(true, infoWindow, map.getCenter());
-          });
-        } else {
-          // Browser doesn't support Geolocation
-          handleLocationError(false, infoWindow, map.getCenter());
-        }
-
-        //  Marker creator
-        function codeAddress(geocoder, map) {
-        geocoder.geocode({ address: address }, function(results, status) {
-          if (status === "OK") {
-            map.setCenter(results[0].geometry.location);
-            if (LatLong.latitude !== null && LatLong.longitude !== null) {
-              calcRoute();
-            }
-            var marker = new google.maps.Marker({
-              map: map,
-              position: results[0].geometry.location
-            });
-          }
-        });
-      }
-
-      }
-
-      function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-        infoWindow.setPosition(pos);
-        infoWindow.setContent(browserHasGeolocation ?
-                              'Error: The Geolocation service failed.' :
-                              'Error: Your browser doesn\'t support geolocation.');
-        infoWindow.open(map);
-      }
-    </script>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAO_SAgxTqtuX3zhkiRahi-ynpM9NqbS1g&callback=initMap">
-    </script>
-
-        
       </div>
-      <div class="figure">
-      </div>
+
+  
+      <div class="figure"></div>
     </div>
+
+    <script>
+      $(window).on('load', () => console.log("Hello from script!"))
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.0/gsap.min.js"></script>
+    <script src="./style.js"></script>
   </body>
-  <script src="/style.js"></script>
 </html>
