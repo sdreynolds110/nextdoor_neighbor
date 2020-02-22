@@ -19,11 +19,17 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.0",
     "express-session": "^1.16.1",
+<<<<<<< HEAD
     "gsap": "^3.2.0",
+=======
+    "mssql": "^6.1.0",
+    "mysql": "^2.18.1",
+>>>>>>> dda5cefadced45cce2b1aff706acfec860ee99aa
     "mysql2": "^1.6.5",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
-    "sequelize": "^5.8.6"
+    "sequelize": "^5.8.6",
+    "sql": "^0.78.0"
   },
   "devDependencies": {
     "chai": "^4.1.2",
