@@ -2,7 +2,6 @@ body {
   margin: 0;
   padding: 0;
   background: #555;
-  font-family: "Raleway", sans-serif;
 }
 
 .box {
@@ -10,25 +9,41 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 600px;
-  height: 400px;
+  width: 90%;
+  height: 90%;
   transform: translate(-50%, -50%);
 }
 
 .logo {
   padding: 123px;
-  color: #fff;
+  color: (110, 110, 110);
   text-align: center;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
 }
-h5{
-  margin: 0;
-  padding: 0;
-  font-size: 1.7rem;
+h1{
+  color: (110, 110, 110);
+  text-align: center;
+  font-family: 'Lilita One';
+  margin-right: 6vh;
+  margin-top: 4vh;
 }
+h3{
+  color: (110, 110, 110);
+  text-align: center;
+  font-family: 'Sue Ellen Francisco';
+}
+h4{
+  color: (110, 110, 110);
+  text-align: center;
+  font-family: 'Lilita One';
+}
+ 
 
+
+
+/* Front page split picture */
 .figure {
   width: 100%;
   height: 100%;
@@ -44,7 +59,7 @@ h5{
   background-image: url("../img/homepage.png");
   background-size: cover;
   transform-origin: bottom;
-  transition: 0.5s;
+  transition: 0.3s;
 }
 
 .box:hover .figure:before {
@@ -61,13 +76,19 @@ h5{
   background-image: url("../img/homepage.png");
   background-size: cover;
   transform-origin: top;
-  transition: 0.5s;
+  transition: 0.3s;
   background-position: 300px;
 }
 
 .box:hover .figure:after {
   transform: rotateX(90deg) translateY(-50%);
 }
+
+
+
+
+
+/* zip code box */
 .input,
 .submit {
     display: inline-block;
@@ -87,4 +108,92 @@ h5{
 }
 .submit::-moz-focus-inner { 
     border: 0;
+}
+
+
+
+
+
+/* Spinning Widget */
+section {
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.full-screen {
+  height: 100%;
+  margin-left: 4vh;
+  margin-bottom: -3vh;
+}
+.wheel-svg {
+  perspective: 300px;
+  margin: 0 auto;
+  margin-left: 2vh;
+  margin-bottom: 2vh;
+}
+.wheel-svg .term {
+  font-family: GothamLight, sans-serif;
+  font-size: 100px;
+  letter-spacing: -1px;
+  fill: rgb(110, 110, 110);
+  opacity: 0;
+}
+.wheel-svg .term {
+  opacity: 1;
+}
+/* .wheel-svg .term.term03 {
+  opacity: 1;
+}
+.wheel-svg .term.term02,
+.wheel-svg .term.term04 {
+  opacity: 0.5;
+}
+.wheel-svg .term.term01,
+.wheel-svg .term.term05 {
+  opacity: 0.2;
+} */
+
+.wheel-03 {
+  position: relative;
+}
+
+.overlays {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  z-index: 5;
+}
+
+.overlay {
+  height: 100%;
+  width: 100%;
+  background-color: rgb(245, 230, 218);
+}
+
+.overlay.none {
+  opacity: 0;
+}
+
+.o75 {
+  opacity: .75;
+}
+
+.o35 {
+  opacity: .5;
+}
+
+
+
+
+
+/*Map
+ /* Set the size of the div element that contains the map */
+ #map {
+  height: 200px; /* The height is 400 pixels */
+  width: 400px; /* The width is the width of the web page */
+  margin-top: 1rem;
 }
