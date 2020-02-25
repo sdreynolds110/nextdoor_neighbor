@@ -1,10 +1,7 @@
 // Requiring our models and passport as we've configured it
 // var db = require("../models");
 var passport = require("../config/passport");
-var beauty = require("../models/beauty.js")
-
-
-
+var models = require("../models")
 
 
 module.exports = function(app) {
@@ -19,7 +16,7 @@ module.exports = function(app) {
   // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
   // otherwise send back an error
   app.post("/api/signup", function(req, res) {
-    db.User.create({
+    models.User.create({
       email: req.body.email,
       password: req.body.password
     })
@@ -51,11 +48,33 @@ module.exports = function(app) {
       });
     }
   });
+
 //  This will pull the address data for the map
-app.get("/api/beauty_addresses", function(req, res) {
-  beauty.findAll({}).then(function(results) {
+app.get("/api/beauty_address", function(req, res) {
+  models.Beauty.findAll({}).then(function(results) {
     // results are available to us inside the .then
     res.json(results);
+
+
+  // This will pull all entries from grocery store table
+  app.get("/api/grocerystores", function(req, res) {
+    grocerystores.findAll({}).then(function(results) {
+      res.json(results);
+    });
   });
-})
+
+  // This will pull all entries from retail table
+  app.get("/api/retailers", function(req, res) {
+    retails.findAll({}).then(function(results) {
+      res.json(results);
+    });
+  });
+
+  // This will pull all entries from restaurant table
+  app.get("/api/restaurants", function(req, res) {
+    restaurants.findAll({}).then(function(results) {
+      res.json(results);
+    });
+
+  });
 };
