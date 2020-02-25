@@ -1,11 +1,7 @@
 // Requiring our models and passport as we've configured it
 // var db = require("../models");
 var passport = require("../config/passport");
-var beauty = require("../models/beauty.js")
-
-
-
-
+var beauty = require("../models/beauty.js");
 
 module.exports = function(app) {
   // Using the passport.authenticate middleware with our local strategy.
@@ -51,11 +47,41 @@ module.exports = function(app) {
       });
     }
   });
-//  This will pull the address data for the map
-app.get("/api/beauty_addresses", function(req, res) {
-  beauty.findAll({}).then(function(results) {
-    // results are available to us inside the .then
-    res.json(results);
+
+  //  This will pull the address data for the map
+  app.get("/api/beauty_addresses", function(req, res) {
+    beauty.address.findAll({}).then(function(results) {
+      // results are available to us inside the .then
+      res.json(results);
+    });
   });
-})
+
+  // This will pull all entries from beauty table
+  app.get("/api/beauty", function(req, res) {
+    beauty.findAll({}).then(function(results) {
+      // results are available to us inside the .then
+      res.json(results);
+    });
+  });
+
+  // This will pull all entries from grocery store table
+  app.get("/api/grocerystores", function(req, res) {
+    grocerystores.findAll({}).then(function(results) {
+      res.json(results);
+    });
+  });
+
+  // This will pull all entries from retail table
+  app.get("/api/retailers", function(req, res) {
+    retails.findAll({}).then(function(results) {
+      res.json(results);
+    });
+  });
+
+  // This will pull all entries from restaurant table
+  app.get("/api/restaurants", function(req, res) {
+    restaurants.findAll({}).then(function(results) {
+      res.json(results);
+    });
+  });
 };
