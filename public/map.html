@@ -4,6 +4,10 @@
     <title>Geolocation</title>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
     <style>
       /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
@@ -32,7 +36,7 @@
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: -34.397, lng: 150.644},
-          zoom: 6
+          zoom: 11
         });
         infoWindow = new google.maps.InfoWindow;
 
@@ -57,20 +61,17 @@
         }
 
         //  Marker creator
-        function codeAddress(geocoder, map) {
-        geocoder.geocode({ address: address }, function(results, status) {
-          if (status === "OK") {
-            map.setCenter(results[0].geometry.location);
-            if (LatLong.latitude !== null && LatLong.longitude !== null) {
-              calcRoute();
-            }
+    //     
+    $.ajax("/api/beauty_address").done(function(data){
+        console.log("data", data)
+        data.forEach(function(address) {
             var marker = new google.maps.Marker({
-              map: map,
-              position: results[0].geometry.location
-            });
-          }
-        });
-      }
+                position: {lat: Number(address.lat), lng: Number(address.lng)},
+                map: map,
+                title: address.name
+            })
+        })
+    })
 
       }
 
