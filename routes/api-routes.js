@@ -19,7 +19,7 @@ module.exports = function(app) {
   // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
   // otherwise send back an error
   app.post("/api/signup", function(req, res) {
-    db.User.create({
+    models.User.create({
       email: req.body.email,
       password: req.body.password
     })
@@ -52,7 +52,7 @@ module.exports = function(app) {
     }
   });
 //  This will pull the address data for the map
-app.get("/api/beauty_addresses", function(req, res) {
+app.get("/api/beauty_address", function(req, res) {
   models.Beauty.findAll({}).then(function(results) {
     // results are available to us inside the .then
     res.json(results);
