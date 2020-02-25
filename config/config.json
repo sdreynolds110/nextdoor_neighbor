@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": "Grishinka7",
-    "database": "nextdoorneighbor", 
+    "database": "nextdoorNeighbor", 
     "host": "127.0.0.1",
     "dialect": "mysql"
   },

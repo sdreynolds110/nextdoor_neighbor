@@ -1,7 +1,7 @@
 // Requiring our models and passport as we've configured it
 // var db = require("../models");
 var passport = require("../config/passport");
-var beauty = require("../models/beauty.js")
+var models = require("../models")
 
 
 
@@ -53,7 +53,7 @@ module.exports = function(app) {
   });
 //  This will pull the address data for the map
 app.get("/api/beauty_addresses", function(req, res) {
-  beauty.findAll({}).then(function(results) {
+  models.Beauty.findAll({}).then(function(results) {
     // results are available to us inside the .then
     res.json(results);
   });
