@@ -19,7 +19,6 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.0",
     "express-session": "^1.16.1",
-    "gsap": "^3.2.0",
     "mssql": "^6.1.0",
     "mysql": "^2.18.1",
     "mysql2": "^1.6.5",
