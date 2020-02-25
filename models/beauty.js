@@ -30,6 +30,7 @@ module.exports = function(sequelize, DataTypes) {
         type: DataTypes.DECIMAL(10,6),
         allowNull: false
       }
+
     });
     return beauty;
   };

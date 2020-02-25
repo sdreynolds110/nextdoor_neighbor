@@ -4,9 +4,6 @@ var passport = require("../config/passport");
 var models = require("../models")
 
 
-
-
-
 module.exports = function(app) {
   // Using the passport.authenticate middleware with our local strategy.
   // If the user has valid login credentials, send them to the members page.
@@ -51,11 +48,33 @@ module.exports = function(app) {
       });
     }
   });
+
 //  This will pull the address data for the map
 app.get("/api/beauty_address", function(req, res) {
   models.Beauty.findAll({}).then(function(results) {
     // results are available to us inside the .then
     res.json(results);
+
+
+  // This will pull all entries from grocery store table
+  app.get("/api/grocerystores", function(req, res) {
+    grocerystores.findAll({}).then(function(results) {
+      res.json(results);
+    });
   });
-})
+
+  // This will pull all entries from retail table
+  app.get("/api/retailers", function(req, res) {
+    retails.findAll({}).then(function(results) {
+      res.json(results);
+    });
+  });
+
+  // This will pull all entries from restaurant table
+  app.get("/api/restaurants", function(req, res) {
+    restaurants.findAll({}).then(function(results) {
+      res.json(results);
+    });
+
+  });
 };

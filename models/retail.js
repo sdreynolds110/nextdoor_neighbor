@@ -22,6 +22,20 @@ module.exports = function(sequelize, DataTypes) {
               validate: {
                   len: [1,140]
               }
+          }, 
+          lat:{
+            type: DataTypes.DECIMAL, 
+            allowNull: false, 
+            validate: {
+                  len: [1,140]
+            }
+          }, 
+          lon:{
+            type: DataTypes.DECIMAL, 
+            allowNull: false, 
+            validate: {
+                  len: [1,140]
+            }
           }
     });
     return retail;
