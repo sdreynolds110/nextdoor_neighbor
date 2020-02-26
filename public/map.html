@@ -55,21 +55,24 @@
         <div id="clicks">
             <input type="checkbox" 
             class="checkbox" 
-            id="retail"/>
+            id="retail"
+            onClick="showRetail"/>
     <label for="checkbox-1" 
            class="checkbox-click-target">
       <span class="checkbox-box"></span>Retail
     </label>
        <input type="checkbox" 
             class="checkbox" 
-            id="beauty"/>
+            id="beauty"
+            onClick="showBeauty"/>
     <label for="checkbox-2" 
            class="checkbox-click-target">
       <span class="checkbox-box"></span>Beauty
     </label>
        <input type="checkbox" 
             class="checkbox" 
-            id="restaurant" 
+            id="restaurant"
+            onClick="showRestaurant" 
     <label for="checkbox-3" 
            class="checkbox-click-target">
       <span class="checkbox-box"></span>Restaurant
@@ -77,6 +80,7 @@
     <input type="checkbox" 
             class="checkbox" 
             id="grocery" 
+            onClick="showGrocery"
     <label for="checkbox-3" 
            class="checkbox-click-target">
       <span class="checkbox-box"></span>Grocery
@@ -84,6 +88,7 @@
     <input type="checkbox" 
             class="checkbox" 
             id="all" 
+            onClick="showAll"
     <label for="checkbox-3" 
            class="checkbox-click-target">
       <span class="checkbox-box"></span>All
@@ -154,7 +159,8 @@
         }
 
     //     
-    $.ajax("/api/beauty_address").done(function(data){
+    function showBeauty() {
+        $.ajax("/api/beauty_address").done(function(data){
         console.log("data", data)
         data.forEach(function(address) {
             var marker = new google.maps.Marker({
@@ -164,8 +170,10 @@
             })
         })
     })
+    }
 
-    $.ajax("/api/grocerystores").done(function(data){
+    function showGrocery() {
+        $.ajax("/api/grocerystores").done(function(data){
         console.log("data", data)
         data.forEach(function(address) {
             var marker = new google.maps.Marker({
@@ -175,8 +183,10 @@
             })
         })
     })
+    }
 
-    $.ajax("/api/retailers").done(function(data){
+    function showRetail() {
+        $.ajax("/api/retailers").done(function(data){
         console.log("data", data)
         data.forEach(function(address) {
             var marker = new google.maps.Marker({
@@ -186,8 +196,9 @@
             })
         })
     })
+    }
 
-    $.ajax("/api/restaurants").done(function(data){
+    function showRestaurants() {$.ajax("/api/restaurants").done(function(data){
         console.log("data", data)
         data.forEach(function(address) {
             var marker = new google.maps.Marker({
@@ -197,7 +208,7 @@
             })
         })
     })
-
+}
 
       }
 
