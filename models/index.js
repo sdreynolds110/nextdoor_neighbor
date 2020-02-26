@@ -2,6 +2,7 @@
 
 
 const fs = require('fs');
+require('dotenv').config();
 const path = require('path');
 const Sequelize = require('sequelize');
 const basename = path.basename(__filename);
@@ -11,8 +12,10 @@ const db = {};
 
 
 let sequelize;
+
 if (config.use_env_variable) {
-  sequelize = new Sequelize(process.env[config.use_env_variable], config);
+  // sequelize = new Sequelize(process.env[config.use_env_variable], config);
+  sequelize = new Sequelize(config.database, config.username, process.env.DB_PASS, config);
 } else {
   sequelize = new Sequelize(config.database, config.username, process.env.DB_PASS, config);
 }
