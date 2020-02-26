@@ -11,7 +11,7 @@ module.exports = function(sequelize, DataTypes) {
         }
       },
       zipcode: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.INTEGER
         // defaultValue is a flag that defaults a new todos complete value to false if
         // it isn't supplied one
       },
@@ -34,17 +34,17 @@ module.exports = function(sequelize, DataTypes) {
         type: DataTypes.DECIMAL, 
         allowNull: false, 
         validate: {
-              len: [1,140]
+          len: [1, 140]
         }
       }, 
       lng:{
         type: DataTypes.DECIMAL, 
         allowNull: false, 
         validate: {
-              len: [1,140]
+          len: [1, 140]
         }
       }
-
+      
     });
     return GroceryStores;
   };
