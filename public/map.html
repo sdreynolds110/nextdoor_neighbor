@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-
     <title>Map</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -111,7 +110,6 @@
           center: {lat: -34.397, lng: 150.644},
           zoom: 11
 
-
         });
         infoWindow = new google.maps.InfoWindow();
 
@@ -166,7 +164,6 @@
             })
         })
     })
-
 
     $.ajax("/api/grocerystores").done(function(data){
         console.log("data", data)

@@ -58,6 +58,7 @@ app.get("/api/beauty_address", function(req, res) {
 })
 
 
+
   // This will pull all entries from grocery store table
   app.get("/api/grocerystores", function(req, res) {
     GroceryStores.findAll({}).then(function(results) {
