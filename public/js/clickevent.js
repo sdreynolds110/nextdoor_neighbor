@@ -2,7 +2,7 @@ $("#submit").on("click", function(event) {
     event.preventDefault();
 
     let inputData = {
-        state: $("#state").val()
+        city: $("#city").val()
     };
     
     $.post("/api/new", inputData)

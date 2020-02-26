@@ -7,6 +7,21 @@ var passport = require("./config/passport");
 //Requiring sql
 var mysql = require("mysql"); 
 
+//setting up JawsDB
+var connection;
+
+if (process.env.JAWSDB_URL) {
+  connection = mysql.createConnection(process.env.JAWSDB_URL);
+} else {
+  connection = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: '',
+    database: ''
+  });
+};
+
+
 // Setting up port and requiring models for syncing
 var PORT = process.env.PORT || 8080;
 var db = require("./models");

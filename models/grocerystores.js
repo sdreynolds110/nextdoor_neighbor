@@ -11,33 +11,45 @@ module.exports = function(sequelize, DataTypes) {
         }
       },
       zipcode: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.INTEGER
         // defaultValue is a flag that defaults a new todos complete value to false if
         // it isn't supplied one
-        
       },
-      address:{
-          type: DataTypes.STRING, 
-          allowNull: false, 
-          validate: {
-              len: [1,140]
-          }
-      }, 
-      lat:{
-        type: DataTypes.DECIMAL, 
-        allowNull: false, 
+      address: {
+        type: DataTypes.STRING,
+        allowNull: false,
         validate: {
-              len: [1,140]
+          len: [1, 140]
         }
-      }, 
-      lon:{
-        type: DataTypes.DECIMAL, 
-        allowNull: false, 
+      },
+      lat: {
+        type: DataTypes.DECIMAL,
+        allowNull: false,
         validate: {
-              len: [1,140]
+          len: [1, 140]
+        }
+      },
+      lon: {
+        type: DataTypes.DECIMAL,
+        allowNull: false,
+        validate: {
+          len: [1, 140]
+        }
+      },
+      lat: {
+        type: DataTypes.DECIMAL(10, 6),
+        allowNull: false,
+        validate: {
+          len: [1, 140]
+        }
+      },
+      lng: {
+        type: DataTypes.DECIMAL(10, 6),
+        allowNull: false,
+        validate: {
+          len: [1, 140]
         }
       }
-
     });
     return groceryStores;
   };
