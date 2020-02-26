@@ -1,5 +1,5 @@
 // Requiring our models and passport as we've configured it
-// var db = require("../models");
+var db = require("../models");
 var passport = require("../config/passport");
 var beauty = require("../models/beauty.js");
 
@@ -57,30 +57,35 @@ module.exports = function(app) {
   });
 
   // This will pull all entries from beauty table
-  app.get("/api/beauty", function(req, res) {
-    beauty.findAll({}).then(function(results) {
+  app.get("/api/beauty/city/:city", function(req, res) {
+    console.log(req.params.city)
+    db.Beauty.findAll({
+      where: {
+        city: req.params.city
+      }
+    }).then(function(results) {
       // results are available to us inside the .then
       res.json(results);
     });
   });
 
   // This will pull all entries from grocery store table
-  app.get("/api/grocerystores", function(req, res) {
-    grocerystores.findAll({}).then(function(results) {
+  app.get("/api/grocerystores/:city", function(req, res) {
+    db.GroceryStores.findAll({city: req.params.city}).then(function(results) {
       res.json(results);
     });
   });
 
   // This will pull all entries from retail table
-  app.get("/api/retailers", function(req, res) {
-    retails.findAll({}).then(function(results) {
+  app.get("/api/retailers/:city", function(req, res) {
+    db.Retails.findAll({city: req.params.city}).then(function(results) {
       res.json(results);
     });
   });
 
   // This will pull all entries from restaurant table
-  app.get("/api/restaurants", function(req, res) {
-    restaurants.findAll({}).then(function(results) {
+  app.get("/api/restaurants/:city", function(req, res) {
+    db.Restaurants.findAll({city: req.params.city}).then(function(results) {
       res.json(results);
     });
   });

@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-    var groceryStores = sequelize.define("GroceryStores", {
+    var GroceryStores = sequelize.define("GroceryStores", {
       name: {
         type: DataTypes.STRING,
         // AllowNull is a flag that restricts a todo from being entered if it doesn't
@@ -14,7 +14,6 @@ module.exports = function(sequelize, DataTypes) {
         type: DataTypes.INTEGER,
         // defaultValue is a flag that defaults a new todos complete value to false if
         // it isn't supplied one
-        
       },
       address:{
           type: DataTypes.STRING, 
@@ -23,6 +22,14 @@ module.exports = function(sequelize, DataTypes) {
               len: [1,140]
           }
       }, 
+      city:{
+          type: DataTypes.STRING, 
+          allowNull: false,
+      }, 
+      state:{
+          type: DataTypes.STRING, 
+          allowNull: false,
+      }, 
       lat:{
         type: DataTypes.DECIMAL, 
         allowNull: false, 
@@ -30,7 +37,7 @@ module.exports = function(sequelize, DataTypes) {
               len: [1,140]
         }
       }, 
-      lon:{
+      lng:{
         type: DataTypes.DECIMAL, 
         allowNull: false, 
         validate: {
@@ -39,5 +46,5 @@ module.exports = function(sequelize, DataTypes) {
       }
 
     });
-    return groceryStores;
+    return GroceryStores;
   };
