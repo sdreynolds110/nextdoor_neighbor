@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+
     <title>Map</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -38,6 +39,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="stylesheets/style.css" />
+
   </head>
 
   <body>
@@ -103,9 +105,13 @@
       var address = "123 Main Street";
 
       function initMap() {
-        map = new google.maps.Map(document.getElementById("map"), {
-          center: { lat: -34.397, lng: 150.644 },
-          zoom: 6
+
+
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: -34.397, lng: 150.644},
+          zoom: 11
+
+
         });
         infoWindow = new google.maps.InfoWindow();
 
@@ -133,6 +139,7 @@
         }
 
         //  Marker creator
+
         function codeAddress(geocoder, map) {
           geocoder.geocode({ address: address }, function(results, status) {
             if (status === "OK") {
@@ -147,6 +154,54 @@
             }
           });
         }
+
+    //     
+    $.ajax("/api/beauty_address").done(function(data){
+        console.log("data", data)
+        data.forEach(function(address) {
+            var marker = new google.maps.Marker({
+                position: {lat: Number(address.lat), lng: Number(address.lng)},
+                map: map,
+                title: address.name
+            })
+        })
+    })
+
+
+    $.ajax("/api/grocerystores").done(function(data){
+        console.log("data", data)
+        data.forEach(function(address) {
+            var marker = new google.maps.Marker({
+                position: {lat: Number(address.lat), lng: Number(address.lng)},
+                map: map,
+                title: address.name
+            })
+        })
+    })
+
+    $.ajax("/api/retailers").done(function(data){
+        console.log("data", data)
+        data.forEach(function(address) {
+            var marker = new google.maps.Marker({
+                position: {lat: Number(address.lat), lng: Number(address.lng)},
+                map: map,
+                title: address.name
+            })
+        })
+    })
+
+    $.ajax("/api/restaurants").done(function(data){
+        console.log("data", data)
+        data.forEach(function(address) {
+            var marker = new google.maps.Marker({
+                position: {lat: Number(address.lat), lng: Number(address.lng)},
+                map: map,
+                title: address.name
+            })
+        })
+    })
+
+
       }
 
       function handleLocationError(browserHasGeolocation, infoWindow, pos) {

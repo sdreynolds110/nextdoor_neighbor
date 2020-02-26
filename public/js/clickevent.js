@@ -10,11 +10,13 @@ function searchButton() {
         sessionStorage.setItem("searchAll", selectAll);
 
         let passOffInfo = sessionStorage.getItem("searchAll");
+        "SELECT * FROM ?"
 
     let selectBeauty = beauty.val();
         sessionStorage.setItem("searchBeauty", selectBeauty);
 
         let passOffInfo = sessionStorage.getItem("searchBeauty");
+        "SELECT * FROM table WHERE"
 
     let selectRestaurant = restaurant.val();
         sessionStorage.setItem("searchRestaurant", selectRestaurant);
