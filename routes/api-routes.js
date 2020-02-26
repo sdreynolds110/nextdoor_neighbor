@@ -54,25 +54,27 @@ app.get("/api/beauty_address", function(req, res) {
   models.Beauty.findAll({}).then(function(results) {
     // results are available to us inside the .then
     res.json(results);
+  })
+})
 
 
   // This will pull all entries from grocery store table
   app.get("/api/grocerystores", function(req, res) {
-    grocerystores.findAll({}).then(function(results) {
+    GroceryStores.findAll({}).then(function(results) {
       res.json(results);
     });
   });
 
   // This will pull all entries from retail table
   app.get("/api/retailers", function(req, res) {
-    retails.findAll({}).then(function(results) {
+    Retail.findAll({}).then(function(results) {
       res.json(results);
     });
   });
 
   // This will pull all entries from restaurant table
   app.get("/api/restaurants", function(req, res) {
-    restaurants.findAll({}).then(function(results) {
+    Restaurants.findAll({}).then(function(results) {
       res.json(results);
     });
 
