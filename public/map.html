@@ -48,14 +48,47 @@
         <nav class="nav links">
           <a class="nav-link" href="index.html"><i class="fas fa-home"></i></a>
           <a class="nav-link" href="/public/login.html">Login/Sign Up</a>
-          <a class="nav-link" href="/public/register.html"
-            >Register Your Business</a
-          >
+          <a class="nav-link" href="/public/register.html">Register Your Business</a>
         </nav>
       </div>
       <div class="col-12 map1">
-        <div id="map">
-
+        <div id="map"></div>
+        <div id="clicks">
+            <input type="checkbox" 
+            class="checkbox" 
+            id="retail"/>
+    <label for="checkbox-1" 
+           class="checkbox-click-target">
+      <span class="checkbox-box"></span>Retail
+    </label>
+       <input type="checkbox" 
+            class="checkbox" 
+            id="beauty"/>
+    <label for="checkbox-2" 
+           class="checkbox-click-target">
+      <span class="checkbox-box"></span>Beauty
+    </label>
+       <input type="checkbox" 
+            class="checkbox" 
+            id="restaurant" 
+    <label for="checkbox-3" 
+           class="checkbox-click-target">
+      <span class="checkbox-box"></span>Restaurant
+    </label>
+    <input type="checkbox" 
+            class="checkbox" 
+            id="grocery" 
+    <label for="checkbox-3" 
+           class="checkbox-click-target">
+      <span class="checkbox-box"></span>Grocery
+    </label>
+    <input type="checkbox" 
+            class="checkbox" 
+            id="all" 
+    <label for="checkbox-3" 
+           class="checkbox-click-target">
+      <span class="checkbox-box"></span>All
+    </label>
         </div>
       </div>
     </div>
@@ -73,9 +106,11 @@
 
       function initMap() {
 
+
         map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: -34.397, lng: 150.644},
           zoom: 11
+
 
         });
         infoWindow = new google.maps.InfoWindow();
@@ -119,7 +154,7 @@
             }
           });
         }
-=======
+
     //     
     $.ajax("/api/beauty_address").done(function(data){
         console.log("data", data)
@@ -166,6 +201,7 @@
         })
     })
 
+
       }
 
       function handleLocationError(browserHasGeolocation, infoWindow, pos) {
@@ -185,4 +221,3 @@
     ></script>
   </body>
 </html>
-

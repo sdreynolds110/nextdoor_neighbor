@@ -282,3 +282,7 @@ body {
   transform: translate(-50%, -50%);
   background: rgb(245, 230, 218);
 }
+
+#clicks{
+  text-align: center;
+}
