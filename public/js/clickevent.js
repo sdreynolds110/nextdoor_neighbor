@@ -1,49 +1,13 @@
-document.getElementsByClassName("submit").onclick = function() {searchButton()};
+$("#submit").on("click", function(event) {
+    event.preventDefault();
 
-function searchButton() {
-    let userInput = input.val();
-        sessionStorage.setItem("searchItem", userInput);
-
-        let passOffInfo = sessionStorage.getItem("searchItem");
+    let inputData = {
+        state: $("#state").val()
+    };
     
-    let selectAll = all.val();
-        sessionStorage.setItem("searchAll", selectAll);
+    $.post("/api/new", inputData)
+        .then(function(data) {
+            console.log(data)
+        });
+});
 
-        let passOffInfo = sessionStorage.getItem("searchAll");
-        "SELECT * FROM ?"
-
-    let selectBeauty = beauty.val();
-        sessionStorage.setItem("searchBeauty", selectBeauty);
-
-        let passOffInfo = sessionStorage.getItem("searchBeauty");
-        "SELECT * FROM table WHERE"
-
-    let selectRestaurant = restaurant.val();
-        sessionStorage.setItem("searchRestaurant", selectRestaurant);
-
-        let passOffInfo = sessionStorage.getItem("searchRestaurant");
-
-    let selectRetail = retail.val();
-        sessionStorage.setItem("searchRetail", selectRetail);
-
-        let passOffInfo = sessionStorage.getItem("searchRetail");
-
-    let selectGrocery = grocery.val();
-        sessionStorage.setItem("searchGrocery", selectGrocery);
-
-        let passOffInfo = sessionStorage.getItem("searchGrocery");
-
-
-
-
-    // app.all('/', function (req, res, next) {
-    //     console.log("working");
-    //     next()
-    // })
-    app.use('/', function (req, res, next) {
-        console.log("working");
-        next(
-            "SELECT * FROM "
-        )
-    })
-}
