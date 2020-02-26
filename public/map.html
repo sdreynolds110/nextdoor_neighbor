@@ -73,6 +73,41 @@
         })
     })
 
+    $.ajax("/api/grocerystores").done(function(data){
+        console.log("data", data)
+        data.forEach(function(address) {
+            var marker = new google.maps.Marker({
+                position: {lat: Number(address.lat), lng: Number(address.lng)},
+                map: map,
+                title: address.name
+            })
+        })
+    })
+
+    $.ajax("/api/retailers").done(function(data){
+        console.log("data", data)
+        data.forEach(function(address) {
+            var marker = new google.maps.Marker({
+                position: {lat: Number(address.lat), lng: Number(address.lng)},
+                map: map,
+                title: address.name
+            })
+        })
+    })
+
+    $.ajax("/api/restaurants").done(function(data){
+        console.log("data", data)
+        data.forEach(function(address) {
+            var marker = new google.maps.Marker({
+                position: {lat: Number(address.lat), lng: Number(address.lng)},
+                map: map,
+                title: address.name
+            })
+        })
+    })
+
+
+
       }
 
       function handleLocationError(browserHasGeolocation, infoWindow, pos) {
