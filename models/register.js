@@ -1,6 +1,16 @@
 module.exports = function(sequelize, DataTypes) {
-  var Restaurants = sequelize.define("Restaurants", {
-    name: {
+  var Register = sequelize.define("Register", {
+    firstname: {
+      type: DataTypes.STRING,
+      // AllowNull is a flag that restricts a todo from being entered if it doesn't
+      // have a text value
+      allowNull: false,
+      // len is a validation that checks that our todo is between 1 and 140 characters
+      validate: {
+        len: [1, 140]
+      }
+    },
+    businessname: {
       type: DataTypes.STRING,
       // AllowNull is a flag that restricts a todo from being entered if it doesn't
       // have a text value
@@ -15,9 +25,16 @@ module.exports = function(sequelize, DataTypes) {
       // defaultValue is a flag that defaults a new todos complete value to false if
       // it isn't supplied one
     },
+    website: {
+      type: DataTypes.STRING,
+      allowNull: true,
+      validate: {
+        len: [1, 140]
+      }
+    },
     address: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
       validate: {
         len: [1, 140]
       }
@@ -29,21 +46,7 @@ module.exports = function(sequelize, DataTypes) {
     state: {
       type: DataTypes.STRING,
       allowNull: false
-    },
-    lat: {
-      type: DataTypes.DECIMAL,
-      allowNull: false,
-      validate: {
-        len: [1, 140]
-      }
-    },
-    lng: {
-      type: DataTypes.DECIMAL,
-      allowNull: false,
-      validate: {
-        len: [1, 140]
-      }
     }
   });
-  return Restaurants;
+  return Register;
 };
