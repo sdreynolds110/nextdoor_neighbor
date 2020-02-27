@@ -175,12 +175,27 @@
                 map: map,
                 title: address.name
             })
+            markerArray.push(marker)
+          
         })
     })
     }
-    $("#beauty").click(function() {
+    
+    $("#beauty").click(function(event) {
+      console.log("event.target.value", event.target.checked)
+      if (event.target.checked===true) {
       showBeauty()
+      }
+      else if (event.target.checked===false) {
+        remBeauty()
+      }
     })
+    function remBeauty() {
+      for(i=0; i<markerArray.length; i++){
+        markerArray[i].setMap(null)
+      }
+    }
+    var markerArray = []
 
     function showGrocery() {
         $.ajax("/api/grocerystores").done(function(data){
