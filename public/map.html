@@ -56,7 +56,9 @@
             <input type="checkbox" 
             class="checkbox" 
             id="retail"
-            onClick="showRetail"/>
+            onClick="showRetail()"
+            value="Call function"
+            />
     <label for="checkbox-1" 
            class="checkbox-click-target">
       <span class="checkbox-box"></span>Retail
@@ -64,7 +66,9 @@
        <input type="checkbox" 
             class="checkbox" 
             id="beauty"
-            onClick="showBeauty"/>
+            
+            />
+            
     <label for="checkbox-2" 
            class="checkbox-click-target">
       <span class="checkbox-box"></span>Beauty
@@ -72,7 +76,8 @@
        <input type="checkbox" 
             class="checkbox" 
             id="restaurant"
-            onClick="showRestaurant" 
+            onclick="showRestaurant()"
+            value="Call function" 
     <label for="checkbox-3" 
            class="checkbox-click-target">
       <span class="checkbox-box"></span>Restaurant
@@ -80,7 +85,8 @@
     <input type="checkbox" 
             class="checkbox" 
             id="grocery" 
-            onClick="showGrocery"
+            onClick="showGrocery()"
+            value="Call function"
     <label for="checkbox-3" 
            class="checkbox-click-target">
       <span class="checkbox-box"></span>Grocery
@@ -88,7 +94,8 @@
     <input type="checkbox" 
             class="checkbox" 
             id="all" 
-            onClick="showAll"
+            onClick="showAll()"
+            value="Call function"
     <label for="checkbox-3" 
            class="checkbox-click-target">
       <span class="checkbox-box"></span>All
@@ -171,6 +178,9 @@
         })
     })
     }
+    $("#beauty").click(function() {
+      showBeauty()
+    })
 
     function showGrocery() {
         $.ajax("/api/grocerystores").done(function(data){
