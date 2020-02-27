@@ -14,6 +14,7 @@ $("#submit").on("click", function(event) {
         }).then(function(results) {
           // results are available to us inside the .then
           res.json(results);
+
         });
       });
     
