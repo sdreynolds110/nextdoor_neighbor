@@ -20,6 +20,7 @@ a {
 }
 .box1{
   background: rgb(245, 230, 218);
+  height: 100vh;
 }
 
 .search {
@@ -38,10 +39,12 @@ h1 {
 }
 .widget1 {
   color: (110, 110, 110);
-  text-align: right;
+  text-align: center;
   font-family: "Lato";
   font-size: xx-large;
   float: left;
+  margin: auto;
+  margin-top: 73vh;
 }
 .widget2 {
   color: (110, 110, 110);
@@ -267,6 +270,12 @@ body {
 
 
 
+
+
+
+
+/* Map page */
+
 #map {
   height: 50%;
   width: 50%;
@@ -285,4 +294,71 @@ body {
 
 #clicks{
   text-align: center;
+}
+
+
+
+
+
+
+
+
+/* register form */
+input[type="text"] {
+  width: 100%;
+  border: 2px solid #aaa;
+  border-radius: 4px;
+  margin: 8px 0;
+  outline: none;
+  padding: 8px;
+  box-sizing: border-box;
+  transition: 0.3s;
+}
+
+input[type="text"]:focus {
+  border-color: dodgerBlue;
+  box-shadow: 0 0 8px 0 dodgerBlue;
+}
+
+.inputWithIcon input[type="text"] {
+  padding-left: 40px;
+}
+
+.inputWithIcon {
+  position: relative;
+}
+
+.inputWithIcon i {
+  position: absolute;
+  left: 0;
+  top: 8px;
+  padding: 9px 8px;
+  color: #aaa;
+  transition: 0.3s;
+}
+
+.inputWithIcon input[type="text"]:focus + i {
+  color: dodgerBlue;
+}
+
+.inputWithIcon.inputIconBg i {
+  background-color: #aaa;
+  color: #fff;
+  padding: 9px 4px;
+  border-radius: 4px 0 0 4px;
+}
+
+.inputWithIcon.inputIconBg input[type="text"]:focus + i {
+  color: #fff;
+  background-color: dodgerBlue;
+}
+.register-form{
+  margin: auto;
+  width: 80%;
+  margin-top: 8vh;
+}
+.add{
+  margin: auto;
+  margin-top: 4vh;
+  
 }
