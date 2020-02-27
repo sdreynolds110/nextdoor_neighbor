@@ -5,9 +5,10 @@ $("#submit").on("click", function(event) {
         city: $("#city").val()
     };
     
-    $.post("/api/new", inputData)
-        .then(function(data) {
-            console.log(data)
+    $.ajax("/api/new", { type: "POST", data: inputData })
+        .then(function() {
+            $("#city").val("");
+            location.reload();
         });
 });
 
