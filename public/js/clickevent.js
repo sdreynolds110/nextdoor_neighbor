@@ -4,10 +4,19 @@ $("#submit").on("click", function(event) {
     let inputData = {
         city: $("#city").val()
     };
-    
-    $.post("/api/new", inputData)
-        .then(function(data) {
-            console.log(data)
+
+    app.get("/api/beauty/city/:inputData", function(req, res) {
+        console.log(req.params.inputData)
+        db.Beauty.findAll({
+          where: {
+            city: req.params.inputData
+          }
+        }).then(function(results) {
+          // results are available to us inside the .then
+          res.json(results);
         });
+      });
+    
+   
 });
 
