@@ -3,7 +3,7 @@ var path = require("path");
 var express = require("express");
 
 // Requiring our custom middleware for checking if a user is logged in
-var isAuthenticated = require("../config/middleware/isAuthenticated");
+var isAuthenticated = require("../config/middleware/isAuthenticated.js");
 
 module.exports = function(app) {
 
@@ -18,14 +18,14 @@ module.exports = function(app) {
     if (req.user) {
       res.redirect("");
     }
-    res.sendFile(path.join(__dirname, "/public/login.html"));
+    res.sendFile(path.join(__dirname, "../public/login.html"));
   });
 
   app.get("/register", function(req, res) {
     if (req.user) {
-      res.redirect("/public/register.html");
+      res.redirect("");
     }
-    res.sendFile(path.join(__dirname, ""));
+    res.sendFile(path.join(__dirname, "../public/register.html"));
   });
 
   // Here we've add our isAuthenticated middleware to this route.
@@ -34,7 +34,6 @@ module.exports = function(app) {
   //   res.sendFile(path.join(__dirname, "../public/members.html"));
   // });
 
-  
   app.get("/map", isAuthenticated, function(req, res) {
     res.sendFile(path.join(__dirname, "../public/map.html"))
   })
