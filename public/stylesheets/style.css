@@ -6,7 +6,15 @@ body {
 a {
   color: #000000;
 }
-
+.widg{
+  margin-left: -18vh;
+}
+/* .responsive{
+  width: 100%;
+  height: auto;
+  background-size:contain;
+  background-position:center;
+} */
 .box {
   background-image: url(../img/nextdoorn.png);
   background-repeat: no-repeat;
@@ -40,7 +48,7 @@ h1 {
 .widget1 {
   color: (110, 110, 110);
   text-align: center;
-  font-family: "Lato";
+  font-family: 'Libre Franklin';
   font-size: xx-large;
   float: left;
   margin: auto;
@@ -96,9 +104,9 @@ h4 {
 
 .word {
   position: absolute;
-  width: 250px;
   opacity: 0;
   color: (110, 110, 110);
+  margin-left: 3vh;
 }
 
 .letter {
