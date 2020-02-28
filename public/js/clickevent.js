@@ -16,7 +16,4 @@ $("#submit").on("click", function(event) {
           res.json(results);
         });
       });
-    
-   
 });
-

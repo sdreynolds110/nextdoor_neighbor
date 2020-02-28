@@ -45,9 +45,9 @@
     <div class="row box1">
       <div class="col-12 top">
         <nav class="nav links">
-          <a class="nav-link" href="index.html"><i class="fas fa-home"></i></a>
-          <a class="nav-link" href="/public/login.html">Login/Sign Up</a>
-          <a class="nav-link" href="/public/register.html">Register Your Business</a>
+          <a class="nav-link" href="../index.html"><i class="fas fa-home"></i></a>
+          <a class="nav-link" href="./login.html">Login/Sign Up</a>
+          <a class="nav-link" href="./register.html">Register Your Business</a>
         </nav>
       </div>
       <div class="col-12 map1">
@@ -56,7 +56,8 @@
             <input type="checkbox" 
             class="checkbox" 
             id="retail"
-            onClick="showRetail"/>
+          
+            />
     <label for="checkbox-1" 
            class="checkbox-click-target">
       <span class="checkbox-box"></span>Retail
@@ -64,7 +65,9 @@
        <input type="checkbox" 
             class="checkbox" 
             id="beauty"
-            onClick="showBeauty"/>
+            
+            />
+            
     <label for="checkbox-2" 
            class="checkbox-click-target">
       <span class="checkbox-box"></span>Beauty
@@ -72,7 +75,7 @@
        <input type="checkbox" 
             class="checkbox" 
             id="restaurant"
-            onClick="showRestaurant" 
+            
     <label for="checkbox-3" 
            class="checkbox-click-target">
       <span class="checkbox-box"></span>Restaurant
@@ -80,7 +83,7 @@
     <input type="checkbox" 
             class="checkbox" 
             id="grocery" 
-            onClick="showGrocery"
+            
     <label for="checkbox-3" 
            class="checkbox-click-target">
       <span class="checkbox-box"></span>Grocery
@@ -88,7 +91,7 @@
     <input type="checkbox" 
             class="checkbox" 
             id="all" 
-            onClick="showAll"
+            
     <label for="checkbox-3" 
            class="checkbox-click-target">
       <span class="checkbox-box"></span>All
@@ -106,7 +109,7 @@
       // failed.", it means you probably did not give permission for the browser to
       // locate you.
       var map, infoWindow;
-      var address = "123 Main Street";
+      
 
       function initMap() {
 
@@ -158,7 +161,7 @@
           });
         }
 
-    //     
+    //     Beauty posts but doesn't remove
     function showBeauty() {
         $.ajax("/api/beauty_address").done(function(data){
         console.log("data", data)
@@ -168,10 +171,29 @@
                 map: map,
                 title: address.name
             })
+            beautyArray.push(marker)
+          
         })
     })
     }
+    
+    $("#beauty").click(function(event) {
+      console.log("event.target.value", event.target.checked)
+      if (event.target.checked===true) {
+      showBeauty()
+      }
+      else if (event.target.checked===false) {
+        remBeauty()
+      }
+    })
+    function remBeauty() {
+      for(i=0; i<beautyArray.length; i++){
+        beautyArray[i].setMap(null)
+      }
+    }
+    var beautyArray = []
 
+    // Grocery Posts and removes perfectly
     function showGrocery() {
         $.ajax("/api/grocerystores").done(function(data){
         console.log("data", data)
@@ -181,10 +203,27 @@
                 map: map,
                 title: address.name
             })
+            groceryArray.push(marker)
         })
     })
     }
 
+    $("#grocery").click(function(event) {
+      if(event.target.checked===true) {
+        showGrocery()
+      }
+      else if (event.target.checked===false) {
+        remGrocery()
+      }
+    })
+    function remGrocery() {
+      for(i=0; i<groceryArray.length; i++){
+        groceryArray[i].setMap(null)
+      }
+    }
+    var groceryArray = []
+
+    // Posts but won't remove
     function showRetail() {
         $.ajax("/api/retailers").done(function(data){
         console.log("data", data)
@@ -194,10 +233,26 @@
                 map: map,
                 title: address.name
             })
+            retailArray.push(marker)
         })
     })
     }
+    $("#retail").click(function(event) {
+      if (event.target.checked===true) {
+        showRetail()
+      }
+      else if (event.target.checked===false) {
+        remRetail()
+      }
+    })
+    function remRetail() {
+      for(i=0; i<retailArray[i].length; i++){
+        retailArray[i].setMap(null)
+      }
+    }
+    var retailArray = []
 
+    //neither shows nor removes
     function showRestaurants() {$.ajax("/api/restaurants").done(function(data){
         console.log("data", data)
         data.forEach(function(address) {
@@ -206,11 +261,25 @@
                 map: map,
                 title: address.name
             })
+            restaurantsArray.push(marker)
         })
     })
 }
-
-      }
+$("#Restaurants").click(function(event) {
+  if(event.target.checked===true) {
+    showRestaurants()
+  }
+  else if (event.target.checked===true) {
+    remRestaurants()
+  }
+})
+function remRestaurants() {
+  for(i=0; i<restaurantsArray.length; i++){
+    restaurantsArray[i].setMap(null)
+  }
+}
+var restaurantsArray = []
+      
 
       function handleLocationError(browserHasGeolocation, infoWindow, pos) {
         infoWindow.setPosition(pos);
@@ -220,6 +289,7 @@
             : "Error: Your browser doesn't support geolocation."
         );
         infoWindow.open(map);
+      }
       }
     </script>
     <script

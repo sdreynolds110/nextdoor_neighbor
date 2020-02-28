@@ -28,26 +28,6 @@ module.exports = function(app) {
       });
   });
 
-  //Route for creating a new business and adding to register table
-
-  app.post("/api/newbusiness", function(req, res) {
-    models.Register.create({
-      firstname: req.body.name,
-      businessname: req.body.businessname, 
-      zipcode: req.body.zipcode, 
-      website: req.body.website, 
-      address: req.body.address, 
-      city: req.body.city, 
-      state: req.body.state
-
-    })
-      .then(function() {
-        res.redirect(307, "/home");
-      })
-      .catch(function(err) {
-        res.status(401).json(err);
-      });
-  });
   // Route for logging user out
   app.get("/logout", function(req, res) {
     req.logout();
@@ -76,6 +56,26 @@ app.get("/api/beauty_address", function(req, res) {
     res.json(results);
   })
 })
+
+app.get("/api/retailers", function(req, res) {
+  models.Retail.findAll({}).then(function(results) {
+    // results are available to us inside the .then
+    res.json(results);
+  });
+});
+
+app.get("/api/restaurants", function(req, res) {
+  models.Restaurants.findAll({}).then(function(results) {
+    // results are available to us inside the .then
+    res.json(results);
+  });
+});
+app.get("/api/grocerystores", function(req, res) {
+  models.GroceryStores.findAll({}).then(function(results) {
+    // results are available to us inside the .then
+    res.json(results);
+  });
+});
 
 
   // This will pull all entries from beauty table
