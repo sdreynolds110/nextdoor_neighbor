@@ -1,5 +1,4 @@
-'use strict';
-
+'use strict'
 
 const fs = require('fs');
 require('dotenv').config();
@@ -14,7 +13,7 @@ if (process.env.JAWSDB_URL){
   connection = mysql.creatConnection(process.env.JAWSDB_URL); 
 
 }else{
-  throw(err)
+  //throw(err)
 }
 
 
