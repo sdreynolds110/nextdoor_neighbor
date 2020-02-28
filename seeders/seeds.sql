@@ -4,8 +4,8 @@ INSERT INTO beauties (name, address, city, state, zipcode, createdAt, updatedAt,
 INSERT INTO beauties (name, address, city, state, zipcode, createdAt, updatedAt, lat, lng) VALUES ("Flirt", "3407 W Cary St", "Richmond", "VA", 23221, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 37.555313, -77.485011);
 
 
-INSERT INTO restaurants (name, address, city, state, zipcode, createdAt, updatedAt, lat, lng) VALUES ("McLean's Restaurant", "3205 W Broad St", "Richmond", "VA ", 23230, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 23230, 37.565932, -77.474799);
-INSERT INTO restaurants (name, address, city, state, zipcode, createdAt, updatedAt, lat, lng) VALUES ("Crafted", "4900 Libbie Mill E Blvd", "Richmond", "VA", 23230, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 23230, 37.591699, -77.493848);
+INSERT INTO restaurants (name, address, city, state, zipcode, createdAt, updatedAt, lat, lng) VALUES ("McLean's Restaurant", "3205 W Broad St", "Richmond", "VA ", 23230, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 37.565932, -77.474799);
+INSERT INTO restaurants (name, address, city, state, zipcode, createdAt, updatedAt, lat, lng) VALUES ("Crafted", "4900 Libbie Mill E Blvd", "Richmond", "VA", 23230, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 37.591699, -77.493848);
 INSERT INTO restaurants (name, address, city, state, zipcode, createdAt, updatedAt, lat, lng) VALUES ("HogsHead Cafe", "9503 W Broad St", "Richmond", "VA", 23294, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 37.639574, -77.558797);
 
 INSERT INTO grocerystores (name, address, city, state, zipcode, createdAt, updatedAt, lat, lng) VALUES ("Ellwood Thompsons", "4 N Thompson St", "Richmond", "VA", 23221, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 37.557822, -77.488433);
