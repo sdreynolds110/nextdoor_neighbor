@@ -1,8 +1,7 @@
 // Requiring our models and passport as we've configured it
 var db = require("../models");
 var passport = require("../config/passport");
-var models = require("../models")
-
+var models = require("../models");
 
 module.exports = function(app) {
   // Using the passport.authenticate middleware with our local strategy.
@@ -49,38 +48,37 @@ module.exports = function(app) {
     }
   });
 
-//  This will pull the address data for the map
-app.get("/api/beauty_address", function(req, res) {
-  models.Beauty.findAll({}).then(function(results) {
-    // results are available to us inside the .then
-    res.json(results);
-  })
-})
-
-app.get("/api/retailers", function(req, res) {
-  models.Retail.findAll({}).then(function(results) {
-    // results are available to us inside the .then
-    res.json(results);
+  //  This will pull the address data for the map
+  app.get("/api/beauty_address", function(req, res) {
+    models.Beauty.findAll({}).then(function(results) {
+      // results are available to us inside the .then
+      res.json(results);
+    });
   });
-});
 
-app.get("/api/restaurants", function(req, res) {
-  models.Restaurants.findAll({}).then(function(results) {
-    // results are available to us inside the .then
-    res.json(results);
+  app.get("/api/retailers", function(req, res) {
+    models.Retail.findAll({}).then(function(results) {
+      // results are available to us inside the .then
+      res.json(results);
+    });
   });
-});
-app.get("/api/grocerystores", function(req, res) {
-  models.GroceryStores.findAll({}).then(function(results) {
-    // results are available to us inside the .then
-    res.json(results);
-  });
-});
 
+  app.get("/api/restaurants", function(req, res) {
+    models.Restaurants.findAll({}).then(function(results) {
+      // results are available to us inside the .then
+      res.json(results);
+    });
+  });
+  app.get("/api/grocerystores", function(req, res) {
+    models.GroceryStores.findAll({}).then(function(results) {
+      // results are available to us inside the .then
+      res.json(results);
+    });
+  });
 
   // This will pull all entries from beauty table
   app.get("/api/beauty/city/:city", function(req, res) {
-    console.log(req.params.city)
+    console.log(req.params.city);
     db.Beauty.findAll({
       where: {
         city: req.params.city
@@ -93,23 +91,22 @@ app.get("/api/grocerystores", function(req, res) {
 
   // This will pull all entries from grocery store table
   app.get("/api/grocerystores/:city", function(req, res) {
-    db.GroceryStores.findAll({city: req.params.city}).then(function(results) {
+    db.GroceryStores.findAll({ city: req.params.city }).then(function(results) {
       res.json(results);
     });
   });
 
   // This will pull all entries from retail table
   app.get("/api/retailers/:city", function(req, res) {
-    db.Retails.findAll({city: req.params.city}).then(function(results) {
+    db.Retails.findAll({ city: req.params.city }).then(function(results) {
       res.json(results);
     });
   });
 
   // This will pull all entries from restaurant table
   app.get("/api/restaurants/:city", function(req, res) {
-    db.Restaurants.findAll({city: req.params.city}).then(function(results) {
+    db.Restaurants.findAll({ city: req.params.city }).then(function(results) {
       res.json(results);
     });
-
   });
 };
