@@ -19,8 +19,8 @@ a {
   transform: translate(-50%, -50%);
 }
 .box1{
-  background: rgb(245, 230, 218);
   height: 130vh;
+  background-color: #dbc9ce
 }
 
 .search {
@@ -137,12 +137,11 @@ h4 {
 }
 
 a {
-  /* color: #666; */
   text-decoration: none;
 }
 
 a:hover {
-  color: #4fda8c;
+  color: #666;
 }
 body {
   color: #666;
@@ -156,6 +155,9 @@ body {
   box-shadow: 0px 1px 8px #bebebe;
   -webkit-box-shadow: 0px 1px 8px #bebebe;
   -moz-box-shadow: 0px 1px 8px #bebebe;
+  margin-top: 3rem;
+  margin-bottom: 14rem;
+  height: fit-content;
 }
 .form-wrap .tabs {
   overflow: hidden;
@@ -200,14 +202,14 @@ body {
 .form-wrap form .button {
   width: 100%;
   padding: 0.8em 0 10px 0.8em;
-  background-color: #28a55f;
   border: none;
   color: #fff;
   cursor: pointer;
   text-transform: uppercase;
+  background-color: #dee4de;
 }
 .form-wrap form .button:hover {
-  background-color: #4fda8c;
+  background-color: #dbc9ce;
 }
 .form-wrap form .checkbox {
   visibility: hidden;
