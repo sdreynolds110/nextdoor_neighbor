@@ -1,5 +1,4 @@
-'use strict';
-
+'use strict'
 
 const fs = require('fs');
 require('dotenv').config();
@@ -9,6 +8,13 @@ const basename = path.basename(__filename);
 const env = process.env.NODE_ENV || 'development';
 const config = require(__dirname + '/../config/config.json')[env];
 const db = {};
+
+if (process.env.JAWSDB_URL){
+  connection = mysql.creatConnection(process.env.JAWSDB_URL); 
+
+}else{
+  //throw(err)
+}
 
 
 let sequelize;
