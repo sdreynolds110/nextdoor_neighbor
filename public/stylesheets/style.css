@@ -20,7 +20,7 @@ a {
 }
 .box1{
   background: rgb(245, 230, 218);
-  height: 100vh;
+  height: 130vh;
 }
 
 .search {
@@ -46,14 +46,7 @@ h1 {
   margin: auto;
   margin-top: 73vh;
 }
-.widget2 {
-  color: (110, 110, 110);
-  text-align: left;
-  float: left;
-  font-family: "Sue Ellen Francisco";
-  font-size: xx-large;
-  margin-top: 7.5vh;
-}
+
 
 h4 {
   color: (110, 110, 110);
@@ -355,10 +348,12 @@ input[type="text"]:focus {
 .register-form{
   margin: auto;
   width: 80%;
-  margin-top: 8vh;
+  margin-top: -6vh;
 }
 .add{
   margin: auto;
-  margin-top: 4vh;
-  
+  margin-top: -6vh;
+}
+.top{
+  height: 0!important;
 }
