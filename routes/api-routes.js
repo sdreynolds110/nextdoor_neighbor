@@ -112,4 +112,20 @@ app.get("/api/grocerystores", function(req, res) {
     });
 
   });
+
+  // app.use(express.bodyParser());
+  app.post("/api/register", function(req, res) {
+    db.Register.create({
+      firstname: req.body.name, 
+      businessname: req.body.businessname, 
+      zipcode: req.body.zipcode, 
+      website: req.body.website, 
+      address: req.body.address, 
+      city: req.body.city, 
+      state: req.body.state
+    }).then(function(results) {
+      res.json(results);
+    });
+
+  })
 };

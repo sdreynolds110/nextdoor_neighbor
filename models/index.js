@@ -8,14 +8,16 @@ const basename = path.basename(__filename);
 const env = process.env.NODE_ENV || 'development';
 const config = require(__dirname + '/../config/config.json')[env];
 const db = {};
+// var mysql = require('mysql')
+// var connection;
 
-if (process.env.JAWSDB_URL){
-  connection = mysql.creatConnection(process.env.JAWSDB_URL); 
+// if (process.env.JAWSDB_URL){
+//   connection = mysql.creatConnection(process.env.JAWSDB_URL); 
 
-}else{
-  //throw(err)
-}
-
+// }else{
+//   //throw(err)
+// }
+// connection.connect()
 
 let sequelize;
 
