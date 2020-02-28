@@ -6,7 +6,6 @@ var express = require("express");
 var isAuthenticated = require("../config/middleware/isAuthenticated.js");
 
 module.exports = function(app) {
-
   app.get("/login", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/login.html"));
   });
@@ -16,11 +15,10 @@ module.exports = function(app) {
   });
 
   app.get("/map", isAuthenticated, function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/map.html"))
-  })
+    res.sendFile(path.join(__dirname, "../public/map.html"));
+  });
 
   app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/index.html"));
-  })
-
+  });
 };

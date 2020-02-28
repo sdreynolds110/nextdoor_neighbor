@@ -30,14 +30,12 @@ module.exports = function(sequelize, DataTypes) {
       }
     },
     lat: {
-      type: DataTypes.DECIMAL(10,6),
-      allowNull: false,
-      
+      type: DataTypes.DECIMAL(10, 6),
+      allowNull: false
     },
     lng: {
-      type: DataTypes.DECIMAL(10,6),
-      allowNull: false,
-      
+      type: DataTypes.DECIMAL(10, 6),
+      allowNull: false
     }
   });
   return Beauty;
