@@ -115,7 +115,7 @@
 
 
         map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: -34.397, lng: 150.644},
+          center: {lat: 37.5407, lng: -77.4360},
           zoom: 11
 
         });
@@ -169,7 +169,7 @@
             var marker = new google.maps.Marker({
                 position: {lat: Number(address.lat), lng: Number(address.lng)},
                 map: map,
-                title: address.name
+                label: address.name
             })
             beautyArray.push(marker)
           
@@ -201,7 +201,7 @@
             var marker = new google.maps.Marker({
                 position: {lat: Number(address.lat), lng: Number(address.lng)},
                 map: map,
-                title: address.name
+                label: address.name
             })
             groceryArray.push(marker)
         })
@@ -231,7 +231,7 @@
             var marker = new google.maps.Marker({
                 position: {lat: Number(address.lat), lng: Number(address.lng)},
                 map: map,
-                title: address.name
+                label: address.name
             })
             retailArray.push(marker)
         })
@@ -246,7 +246,7 @@
       }
     })
     function remRetail() {
-      for(i=0; i<retailArray[i].length; i++){
+      for(i=0; i<retailArray.length; i++){
         retailArray[i].setMap(null)
       }
     }
@@ -259,17 +259,17 @@
             var marker = new google.maps.Marker({
                 position: {lat: Number(address.lat), lng: Number(address.lng)},
                 map: map,
-                title: address.name
+                label: address.name
             })
             restaurantsArray.push(marker)
         })
     })
 }
-$("#Restaurants").click(function(event) {
+$("#restaurant").click(function(event) {
   if(event.target.checked===true) {
     showRestaurants()
   }
-  else if (event.target.checked===true) {
+  else if (event.target.checked===false) {
     remRestaurants()
   }
 })
