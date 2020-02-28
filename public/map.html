@@ -246,7 +246,7 @@
       }
     })
     function remRetail() {
-      for(i=0; i<retailArray[i].length; i++){
+      for(i=0; i<retailArray.length; i++){
         retailArray[i].setMap(null)
       }
     }
@@ -265,11 +265,11 @@
         })
     })
 }
-$("#Restaurants").click(function(event) {
+$("#restaurant").click(function(event) {
   if(event.target.checked===true) {
     showRestaurants()
   }
-  else if (event.target.checked===true) {
+  else if (event.target.checked===false) {
     remRestaurants()
   }
 })
