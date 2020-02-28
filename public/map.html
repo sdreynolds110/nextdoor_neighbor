@@ -161,7 +161,7 @@
           });
         }
 
-    //     
+    //     Beauty posts but doesn't remove
     function showBeauty() {
         $.ajax("/api/beauty_address").done(function(data){
         console.log("data", data)
@@ -193,6 +193,7 @@
     }
     var beautyArray = []
 
+    // Grocery Posts and removes perfectly
     function showGrocery() {
         $.ajax("/api/grocerystores").done(function(data){
         console.log("data", data)
@@ -222,6 +223,7 @@
     }
     var groceryArray = []
 
+    // Posts but won't remove
     function showRetail() {
         $.ajax("/api/retailers").done(function(data){
         console.log("data", data)
@@ -250,6 +252,7 @@
     }
     var retailArray = []
 
+    //neither shows nor removes
     function showRestaurants() {$.ajax("/api/restaurants").done(function(data){
         console.log("data", data)
         data.forEach(function(address) {
@@ -262,7 +265,7 @@
         })
     })
 }
-$("#beauty").click(function(event) {
+$("#Restaurants").click(function(event) {
   if(event.target.checked===true) {
     showRestaurants()
   }
