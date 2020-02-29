@@ -21,9 +21,9 @@ if (config.use_env_variable) {
   console.log("TEST A");
   // sequelize = new Sequelize(process.env[config.use_env_variable], config);
   sequelize = new Sequelize(
-    config.database,
-    config.username,
-    process.env.DB_PASS,
+    process.env.HDB_HOST,
+    process.env.HDB_USER,
+    process.env.HDB_PASS,
     config
   );
 } else {
