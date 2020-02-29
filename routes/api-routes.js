@@ -57,7 +57,7 @@ module.exports = function(app) {
   });
 
   app.get("/api/retailers", function(req, res) {
-    models.Retail.findAll({}).then(function(results) {
+    models.Retails.findAll({}).then(function(results) {
       // results are available to us inside the .then
       res.json(results);
     });
@@ -90,22 +90,34 @@ module.exports = function(app) {
   });
 
   // This will pull all entries from grocery store table
-  app.get("/api/grocerystores/:city", function(req, res) {
-    db.GroceryStores.findAll({ city: req.params.city }).then(function(results) {
+  app.get("/api/grocerystores/city/:city", function(req, res) {
+    db.GroceryStores.findAll({ 
+      where: {
+        city: req.params.city
+      }
+    }).then(function(results) {
       res.json(results);
     });
   });
 
   // This will pull all entries from retail table
-  app.get("/api/retailers/:city", function(req, res) {
-    db.Retails.findAll({ city: req.params.city }).then(function(results) {
+  app.get("/api/retailers/city/:city", function(req, res) {
+    db.Retails.findAll({
+      where: {
+        city: req.params.city
+      }
+    }).then(function(results) {
       res.json(results);
     });
   });
 
   // This will pull all entries from restaurant table
-  app.get("/api/restaurants/:city", function(req, res) {
-    db.Restaurants.findAll({ city: req.params.city }).then(function(results) {
+  app.get("/api/restaurants/city/:city", function(req, res) {
+    db.Restaurants.findAll({
+      where: {
+        city: req.params.city
+      }
+    }).then(function(results) {
       res.json(results);
     });
   });
