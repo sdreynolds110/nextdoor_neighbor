@@ -9,23 +9,14 @@ const env = process.env.NODE_ENV || "development";
 const config = require(__dirname + "/../config/config.json")[env];
 const db = {};
 
-if (process.env.JAWSDB_URL) {
-  connection = mysql.creatConnection(process.env.JAWSDB_URL);
-} else {
-  //throw(err)
-}
+
 
 let sequelize;
 
 if (config.use_env_variable) {
   console.log("TEST A");
-  // sequelize = new Sequelize(process.env[config.use_env_variable], config);
-  sequelize = new Sequelize(
-    process.env.HDB_HOST,
-    process.env.HDB_USER,
-    process.env.HDB_PASS,
-    config
-  );
+  sequelize = new Sequelize(process.env[config.use_env_variable], config);
+
 } else {
   sequelize = new Sequelize(
     config.database,
