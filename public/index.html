@@ -9,10 +9,9 @@
       crossorigin="anonymous"
     />
     <script
-      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-      crossorigin="anonymous"
-    ></script>
+      src="http://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
       integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
@@ -31,12 +30,19 @@
       src="https://kit.fontawesome.com/b1c2a0df1f.js"
       crossorigin="anonymous"
     ></script>
+
+    
+    <link href="https://fonts.googleapis.com/css?family=Lato:100&display=swap" rel="stylesheet">
+    <link href="./stylesheets/style.css" rel="stylesheet">
+    
+
     <link href="https://fonts.googleapis.com/css?family=Libre+Franklin&display=swap" rel="stylesheet">
     <link
       href="https://fonts.googleapis.com/css?family=Lato:100&display=swap"
       rel="stylesheet"
     />
     <link href="./stylesheets/style.css" rel="stylesheet" />
+
 
     <title>Nextdoor Neighbor</title>
   </head>
@@ -53,10 +59,14 @@
 
       <div class="col-12 search">
         <h4>Search Local Businesses In Any City.</h4>
-        <form action="./map.html">
-          <input class="input" type="search" placeholder="Type In A City" />
+
+
+        
+          <input class="input" type="search" placeholder="Type In A City"/>
+
+        
           <input class="submit" type="submit" value="Submit" id="city"/>
-        </form>
+
       </div>
       <div class="col widget1">
         <h3 class="widg">
@@ -71,5 +81,8 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.0/gsap.min.js"></script>
     <script src="./js/style.js"></script>
+    <script
+      src="js/clickevent.js"
+    ></script>
   </body>
 </html>
