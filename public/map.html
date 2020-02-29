@@ -161,7 +161,7 @@
           });
         }
 
-    //     Beauty posts but doesn't remove
+    //   puts the pin on the map
     function showBeauty() {
         $.ajax("/api/beauty_address").done(function(data){
         console.log("data", data)
@@ -177,6 +177,7 @@
     })
     }
     
+    // listener for checkbox
     $("#beauty").click(function(event) {
       console.log("event.target.value", event.target.checked)
       if (event.target.checked===true) {
@@ -193,7 +194,7 @@
     }
     var beautyArray = []
 
-    // Grocery Posts and removes perfectly
+    
     function showGrocery() {
         $.ajax("/api/grocerystores").done(function(data){
         console.log("data", data)
@@ -223,7 +224,7 @@
     }
     var groceryArray = []
 
-    // Posts but won't remove
+    
     function showRetail() {
         $.ajax("/api/retailers").done(function(data){
         console.log("data", data)
@@ -252,7 +253,7 @@
     }
     var retailArray = []
 
-    //neither shows nor removes
+   
     function showRestaurants() {$.ajax("/api/restaurants").done(function(data){
         console.log("data", data)
         data.forEach(function(address) {
