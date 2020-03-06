@@ -1,7 +1,6 @@
 // Requiring necessary npm packages
 var express = require("express");
-const dotenv = require("dotenv");
-dotenv.config();
+
 var PORT = process.env.PORT || 8080;
 var db = require("./models");
 // Creating express app and configuring middleware needed for authentication
