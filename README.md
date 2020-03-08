@@ -6,8 +6,7 @@ An app to connect you with small businesses in your local area!
 
 Business owners can add their business to the database, and users can search their surrounding area for different types of local shops.  Nextdoor Neighbor will display restaurants, boutiques, grocery stores and beauty shops.  Users can sort the stores by type and view them on a map.  The goal is to help people find and share small businesses with each other in a pleasing and easy to use format.  
 
-App is deployed on heroku here https://dry-peak-18997.herokuapp.com/
-
+App is deployed on heroku here https://glacial-eyrie-74819.herokuapp.com/
 # Technologies used:
 
 Node
