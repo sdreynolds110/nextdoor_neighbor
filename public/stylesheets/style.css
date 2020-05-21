@@ -6,11 +6,11 @@ body {
 a {
   color: #000000;
 }
-.widg{
+.widg {
   margin-left: -18vh;
 }
 /* .responsive{
-  width: 100%;
+  max-width: 100%;
   height: auto;
   background-size:contain;
   background-position:center;
@@ -26,9 +26,9 @@ a {
   height: 90%;
   transform: translate(-50%, -50%);
 }
-.box1{
+.box1 {
   height: 130vh;
-  background-color: #dbc9ce
+  background-color: #dbc9ce;
 }
 
 .search {
@@ -48,13 +48,12 @@ h1 {
 .widget1 {
   color: (110, 110, 110);
   text-align: center;
-  font-family: 'Libre Franklin';
+  font-family: "Libre Franklin";
   font-size: xx-large;
   float: left;
   margin: auto;
   margin-top: 73vh;
 }
-
 
 h4 {
   color: (110, 110, 110);
@@ -64,9 +63,6 @@ h4 {
 .links {
   float: right;
 }
-
-
-
 
 /* zip code box */
 .input,
@@ -89,8 +85,6 @@ h4 {
 .submit::-moz-focus-inner {
   border: 0;
 }
-
-
 
 /* Spinning Widget */
 .text {
@@ -128,15 +122,6 @@ h4 {
   transform: rotateX(0deg);
   transition: transform 0.38s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
-
-
-
-
-
-
-
-
-
 
 /* stylesheet for login/signup */
 * {
@@ -271,12 +256,6 @@ body {
   font-size: 14px;
 }
 
-
-
-
-
-
-
 /* Map page */
 
 #map {
@@ -285,7 +264,7 @@ body {
   margin: auto;
   margin-top: 10%;
 }
-.map1{
+.map1 {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -295,16 +274,9 @@ body {
   background: rgb(245, 230, 218);
 }
 
-#clicks{
+#clicks {
   text-align: center;
 }
-
-
-
-
-
-
-
 
 /* register form */
 input[type="text"] {
@@ -355,15 +327,15 @@ input[type="text"]:focus {
   color: #fff;
   background-color: dodgerBlue;
 }
-.register-form{
+.register-form {
   margin: auto;
   width: 80%;
   margin-top: -6vh;
 }
-.add{
+.add {
   margin: auto;
   margin-top: -6vh;
 }
-.top{
-  height: 0!important;
+.top {
+  height: 0 !important;
 }
